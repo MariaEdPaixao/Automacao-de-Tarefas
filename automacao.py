@@ -1,36 +1,40 @@
+#AULA 01 - Automação de tarefas
+
 # Passo a passo do projeto
 # Passo 1: Entrar no sistema da empresa 
     # https://dlp.hashtagtreinamentos.com/python/intensivao/login
 
 import pyautogui
-import time
+import time 
 
 # pyautogui.write -> escrever um texto
 # pyautogui.press -> apertar 1 tecla
 # pyautogui.click -> clicar em algum lugar da tela
 # pyautogui.hotkey -> combinação de teclas
-pyautogui.PAUSE = 0.3
 
+pyautogui.PAUSE = 0.3
+     
 # abrir o navegador (chrome)
 pyautogui.press("win")
 pyautogui.write("chrome")
 pyautogui.press("enter")
 
 # entrar em uma conta do chrome, pois meu computador tem várias selecionadas
-pyautogui.click(x=307, y=636)
+time.sleep(3) #tempo de espera para poder clicar e processar 
+pyautogui.click(x=307, y=634)
 
 # entrar no link 
 pyautogui.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login")
 pyautogui.press("enter")
-time.sleep(14)
+time.sleep(5)
 
 #Passo 2: Fazer login
-pyautogui.click(x=877, y=395)
+pyautogui.click(x=544, y=373)
 pyautogui.write("mariaeduardaalvesdapaixao0807@gmail.com")
 pyautogui.press("tab")
 pyautogui.write("1234")
 pyautogui.press("tab")
-pyautogui.click(x=943, y=539) #clicando no btn de login 
+pyautogui.click(x=528, y=555) #clicando no btn de login 
 time.sleep(3)
 
 # Passo 3: Importar a base de produtos pra cadastrar
@@ -43,7 +47,7 @@ print(tabela)
 # Passo 4: Cadastrar um produto
 for linha in tabela.index:
     # clicar no campo de código
-    pyautogui.click(x=826, y=288)
+    pyautogui.click(x=544, y=259)
     # pegar da tabela o valor do campo que a gente quer preencher
     codigo = tabela.loc[linha, "codigo"]
     # preencher o campo
